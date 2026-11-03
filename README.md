@@ -13,7 +13,7 @@ Practice
 
 | 브랜치 | 보드 | 과제 |
 |---|---|---|
-| [`Basys3`](../../tree/Basys3) | Digilent Basys3 (Artix-7) | Verilog 7개 (게이트 · 가산기 · 카운터 · FSM · RAM), SystemVerilog 4개 (클래스 TB · OOP · UVM · 전용 CPU) |
+| [`Basys3`](../../tree/Basys3) | Digilent Basys3 (Artix-7) | Verilog 7개 (게이트 · 가산기 · 카운터 · FSM · RAM), SystemVerilog 4개 (클래스 TB · fork-join · OOP · 전용 CPU) |
 | [`RaspberryPi`](../../tree/RaspberryPi) | Raspberry Pi | 준비 중 |
 | [`VCS`](../../tree/VCS) | Synopsys VCS (시뮬레이션) | UVM 3개 (adder · counter · RAM), 범용 CPU |
 | [`Nucleo-F411RE`](../../tree/Nucleo-F411RE) | STM32 Nucleo-F411RE | [Day 11/03](../../tree/Nucleo-F411RE/Day_1103) ADC + DMA 2채널 x/y 카운트 |
