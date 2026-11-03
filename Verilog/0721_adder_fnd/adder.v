@@ -87,7 +87,7 @@ module full_adder_4bit (
     full_adder FA1 (
         .a  (a[0]),
         .b  (b[0]),
-        .cin(1'b0),
+        .cin(cin),
         .s  (s[0]),
         .c  (c1)
     );
