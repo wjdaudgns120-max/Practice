@@ -1,6 +1,6 @@
 # Practice · Basys3
 
-Digilent Basys3 (Artix-7) FPGA와 Vivado 시뮬레이터로 진행한 Verilog / SystemVerilog 실습 과제입니다. ([← 전체 목차](../../tree/main))
+Digilent Basys3 (Artix-7) FPGA, Vivado 시뮬레이터, Synopsys VCS로 진행한 Verilog / SystemVerilog 실습 과제입니다. ([← 전체 목차](../../tree/main))
 
 > 같은 내용을 여러 번 실습한 경우 가장 완성도 높은 버전 하나만 남겼고, 포트폴리오 프로젝트에 포함된 실습(UART, FIFO, SR04, DHT11, 시계·스톱워치, RV32I CPU)은 해당 저장소에서 확인할 수 있습니다.
 > → [basys3-uart-watch-sensor](https://github.com/wjdaudgns120-max/basys3-uart-watch-sensor) · [rv32i-cpu-project](https://github.com/wjdaudgns120-max/rv32i-cpu-project) · [verificate-fifo-used-uvm](https://github.com/wjdaudgns120-max/verificate-fifo-used-uvm)
@@ -24,9 +24,14 @@ Digilent Basys3 (Artix-7) FPGA와 Vivado 시뮬레이터로 진행한 Verilog / 
 | 08/18 | [sv_tb_adder](SystemVerilog/0818_sv_tb_adder) | 8bit 가감산기를 클래스 기반 테스트벤치로 검증 | Transaction · Generator · Driver · Monitor · Scoreboard · Environment, `mailbox`, `event` |
 | 08/19 | [sv_register](SystemVerilog/0819_sv_register) | 32bit 레지스터를 클래스 기반 테스트벤치로 검증, `fork-join` 동작 실습 | `always_ff`, `fork-join / join_any / join_none` |
 | 08/24 | [sv_oop](SystemVerilog/0824_sv_oop) | SystemVerilog OOP 예제 8개 | 상속과 `super`, `virtual` 함수(정적/동적 바인딩), `static` 멤버, interface · clocking block · modport |
-| 08/24 | [uvm_adder](SystemVerilog/0824_uvm_adder) | 8bit 가산기를 UVM 환경으로 검증 (랜덤 시퀀스 100개) | `seq_item`, sequence, driver, monitor(analysis port), scoreboard, agent, env, test, `uvm_config_db` |
+| 08/26 | [uvm_adder](SystemVerilog/0826_uvm_adder) | 8bit 가산기를 UVM 환경으로 검증 (랜덤 시퀀스 100개) · **VCS** | `seq_item`, sequence, driver, monitor(analysis port), scoreboard, agent, env, test, `uvm_config_db` |
+| 08/26 | [uvm_counter](SystemVerilog/0826_uvm_counter) | 3bit 카운터와 8주기 tick 출력을 UVM으로 검증. 일반 시퀀스와 reset 시퀀스를 나눠 실행 · **VCS** | 다중 시퀀스, 카운트값 · tick 별도 PASS/FAIL 집계 |
+| 08/31 | [uvm_ram](SystemVerilog/0831_uvm_ram) | 256×8bit RAM을 UVM으로 검증 (랜덤 트랜잭션 10,000개), 기능 커버리지 측정 · **VCS** | `uvm_subscriber` 기반 coverage, `covergroup` / `coverpoint` (`iff`), 코드 커버리지(`-cm`) |
 | 09/01 | [dedicated_cpu](SystemVerilog/0901_dedicated_cpu) | 1부터 10까지의 합(55)을 계산하는 전용 CPU. Control Unit(FSM)과 Datapath(MUX · 레지스터 · ALU · 비교기)로 분리 | 제어부/데이터패스 분리 설계, `typedef enum`, `always_comb` |
+| 09/02 | [gp_cpu](SystemVerilog/0902_gp_cpu) | 같은 1~10 합 계산을 4×8bit 레지스터 파일 + ALU 구조의 범용 CPU로 다시 설계 · **VCS** | 레지스터 파일(읽기 포트 2 · 쓰기 포트 1), 7상태 제어 FSM |
 
 ## 개발 환경
 
-Verilog / SystemVerilog, UVM, Xilinx Vivado, Digilent Basys3 (Artix-7)
+Verilog / SystemVerilog, UVM, Xilinx Vivado, Synopsys VCS / Verdi, Digilent Basys3 (Artix-7)
+
+VCS 실습 폴더는 각 폴더에서 `make` 후 `make simv` (adder는 `make run`)로 실행합니다.

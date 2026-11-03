@@ -15,7 +15,7 @@ endinterface
 
 // 1. transaction -> seq_item from uvm_sequence_item
 class seq_item extends uvm_sequence_item;
-    rand bit [7:0] a; // what the fuck? arue u doing
+    rand bit [7:0] a;
     rand bit [7:0] b;
     logic    [8:0] y;
 
@@ -180,6 +180,7 @@ class adder_scoreboard extends uvm_scoreboard;
         if (!(pass_cnt + fail_cnt))
             `uvm_error("SCB", "No transaction received !!!")
     endfunction
+
 endclass
 
 // adder_agent : driver + monitor + sequence
@@ -274,6 +275,12 @@ module tb_adder_uvm ();
         .b(a_if.b),
         .y(a_if.y)
     );
+
+    initial begin
+        // for make VCS waveform
+        $fsdbDumpfile("wave.fsdb");
+        $fsdbDumpvars(0);
+    end
 
     initial begin
         uvm_config_db#(virtual adder_if)::set(null, "*", "a_vif", a_if);
