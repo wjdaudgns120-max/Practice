@@ -1,0 +1,12 @@
+build/
+csrc/
+simv*
+*.daidir
+*.fsdb
+*.vdb
+*.log
+*.key
+novas*
+verdiLog/
+vdCovLog/
+vc_hdrs.h
