@@ -8,6 +8,7 @@ Synopsys VCS / Verdi 환경에서 진행한 SystemVerilog · UVM 실습 과제�
 | 08/26 | [uvm_counter](0826_uvm_counter) | 3bit 카운터와 8주기 tick 출력을 UVM으로 검증. 일반 시퀀스와 reset 시퀀스를 나눠 실행 | 다중 시퀀스, 카운트값 · tick 별도 PASS/FAIL 집계 |
 | 08/31 | [uvm_ram](0831_uvm_ram) | 256×8bit RAM을 UVM으로 검증 (랜덤 트랜잭션 10,000개), 기능 커버리지 측정 | `uvm_subscriber` 기반 coverage, `covergroup` / `coverpoint` (`iff`), 코드 커버리지(`-cm`) |
 | 09/02 | [gp_cpu](0902_gp_cpu) | 1~10 합 계산을 4×8bit 레지스터 파일 + ALU 구조의 범용 CPU로 설계 (Basys3 브랜치의 [전용 CPU](../../tree/Basys3/SystemVerilog/0901_dedicated_cpu) 다음 단계) | 레지스터 파일(읽기 포트 2 · 쓰기 포트 1), 7상태 제어 FSM |
+| 11/24 | [axi_uart](1124_axi_uart) | Vivado AXI4-Lite IP 템플릿에 UART를 붙여 SR/TDR/RDR/CR 레지스터로 제어, tx→rx loopback으로 송수신 · 인터럽트 확인 | AXI4-Lite slave (AW/W/B, AR/R 핸드셰이크), 메모리 맵 레지스터, UART 8N1, Verdi 파형 |
 
 ## 실행
 
@@ -22,4 +23,4 @@ make clean
 
 ## 개발 환경
 
-SystemVerilog, UVM 1.2, Synopsys VCS / Verdi
+SystemVerilog, Verilog, UVM 1.2, AXI4-Lite, Synopsys VCS / Verdi
